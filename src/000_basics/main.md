@@ -37,4 +37,49 @@ Together, the name and parameter list make up what is known as the function sign
 
 ## What makes the `main` function special
 
+The primary reason the `main` function is special is because it is logically where every C++ program begins. When you execute your program, it starts at `main` (outside of some initialization that occurs before main, but that's a story for another time).
+
+## How many different forms can the `main` function take?
+
+The `main` function can only have one of two function signatures.
+
+The first signature takes 0 parameters:
+
+```cpp
+int main() {
+  return 0;
+}
+```
+
+This first form is the one we will typically use in our programs.
+
+The second function signature for `main` takes 2 parameters:
+
+```cpp
+int main(int argc, char* argv[]) {
+  return 0;
+}
+```
+
+The form is used when we want to pass in arguments from the command line. `argc` is the integer number of arguments passed from the command line, and `argv` is an array containing those arguments in the form of strings.
+
+## Why does the `main` function typically have `return 0;`?
+
+The return value of the `main` function represents the exit code of the program. A returned value of 0 indicates that a program completed successfully. A non-zero return code is typically used to indicate some kind of error.
+
+From a command line, we can check the value of a return code using `echo $?`:
+
+```txt
+cba@cba$ ./main
+cba@cba$ echo $?
+0
+```
+
+If we were to return a different value (e.g., `return 7;`), we would see whatever that number is from when we ran `echo $?`:
+
+```txt
+cba@cba$ ./main
+cba@cba$ echo $?
+7
+```
 
