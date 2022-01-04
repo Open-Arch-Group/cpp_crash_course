@@ -83,3 +83,38 @@ cba@cba$ echo $?
 7
 ```
 
+# Compilation and execution
+
+## What are "compilers"
+
+Before we can execute our program, it must first be transformed from high-level C++ into an executable (something that can execute on our CPU). This is done with a piece of system software called a compiler.
+
+In reality, the process commonly referred to as compilation has many sub-steps, of which compilation is just one part. In general, there are 4 phases of transforming a piece of C++ into and executable including:
+
+1. Preprocessing
+2. Compilation
+3. Assembly
+4. Linking
+
+Similarly, what we commonly refer to as compilers (e.g., `g++`) are really compiler drivers. There are called compiler drivers because they drive the entire flow of generating things like executables in an automatic way.
+
+## How can be generate an executable with `g++`?
+
+For our simple program with a (nearly) empty `main` function, we can generate an executable with the following command:
+
+```txt
+cba@cba$ g++ main.cpp -o main.out
+```
+
+Here, we are feeding our source file to `g++`, and we specify the output executable name using `-o` flag.
+
+## Executing our program
+
+We can execute our program from the command line by simply running `./main.out` from the command line:
+
+```txt
+cba@cba$ ./main.out
+```
+
+Unsurprisingly, nothing happens after we press enter! That's because our `main` function only does `return 0;` (returning that the program completed successfully).
+
