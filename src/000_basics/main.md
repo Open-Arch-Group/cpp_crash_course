@@ -7,7 +7,6 @@ The most simple program we can write in C++ is an empty `main` function. This fu
 - Email - CoffeeBeforeArch@gmail.com
 - Twitter - @AcceleratorNick
 
-
 # The Most-Basic C++ Program
 
 Below is the most-basic C++ program - a (mostly) empty `main` function:
@@ -83,20 +82,20 @@ cba@cba$ echo $?
 7
 ```
 
-# Compilation and execution
+# Compilation and Execution
+
+Before we can execute our program, it must first be transformed from our high-level C++ into an executable (something that can execute on our CPU). This is done with a piece of system software called a compiler.
 
 ## What are "compilers"
 
-Before we can execute our program, it must first be transformed from high-level C++ into an executable (something that can execute on our CPU). This is done with a piece of system software called a compiler.
-
-In reality, the process commonly referred to as compilation has many sub-steps, of which compilation is just one part. In general, there are 4 phases of transforming a piece of C++ into and executable including:
+In reality, the process commonly referred to as compilation is a multi-step process, of which compilation is just one part. In general, there are 4 phases of transforming a piece of C++ into and executable including:
 
 1. Preprocessing
 2. Compilation
 3. Assembly
 4. Linking
 
-Similarly, what we commonly refer to as compilers (e.g., `g++`) are really compiler drivers. There are called compiler drivers because they drive the entire flow of generating things like executables in an automatic way.
+Similarly, what we commonly refer to as compilers (e.g., `g++`) are really compiler drivers. There are called compiler drivers because they drive the entire flow of generating things like executables in an automatic way (not just the actual compilation step).
 
 ## How can be generate an executable with `g++`?
 
@@ -106,7 +105,7 @@ For our simple program with a (nearly) empty `main` function, we can generate an
 cba@cba$ g++ main.cpp -o main.out
 ```
 
-Here, we are feeding our source file to `g++`, and we specify the output executable name using `-o` flag.
+Here, we are feeding our source file to `g++`, and specify the name of our executable using the `-o` flag.
 
 ## Executing our program
 
@@ -117,4 +116,12 @@ cba@cba$ ./main.out
 ```
 
 Unsurprisingly, nothing happens after we press enter! That's because our `main` function only does `return 0;` (returning that the program completed successfully).
+
+# Conclusion
+
+Below are some of the core ideas from this guide:
+
+1. A function is named routine that we can call to execute some set of actions
+2. The `main` function is a special kind of function that is where you program begins execution
+3. We use compilers to translate our C++ into executables that can execute on our processors
 
